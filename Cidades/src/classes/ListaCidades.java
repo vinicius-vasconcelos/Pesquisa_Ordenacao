@@ -2,24 +2,18 @@ package classes;
 
 public class ListaCidades extends Lista{
 
-    public ListaCidades() {
-        super();
-    }
-    
     @Override
     public void inicializar() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void inserir(String info) {
-    }
-
-    @Override
-    public No buscar(String info) {
-        return null;
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void exibir() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

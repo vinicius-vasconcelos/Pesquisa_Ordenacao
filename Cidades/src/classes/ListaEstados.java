@@ -20,21 +20,38 @@ public class ListaEstados extends Lista{
         if(inicio == null)
             inicio = fim = novoEstado;
         else {
-            No pos = buscar(info);
+            NoEstado pos = buscar(info);
+            
+            if(pos == null) { //ultima caixa
+                fim.setProx(novoEstado);
+                novoEstado.setAnt(fim);
+                fim = novoEstado;
+            } else {
+                if(info.compareToIgnoreCase(pos.getInfo()) == 1){
+                    pos.getProx().setAnt(novoEstado);
+                    novoEstado.setProx(pos.getProx());
+                    pos.setProx(novoEstado);
+                    novoEstado.setAnt(pos);
+                }
+            }
         }
     }
-
-    @Override
-    public No buscar(String info) {
+    public NoEstado buscar(String info) {
         NoEstado aux = inicio;
         
-        /*while(aux != null && info < aux.getInfo())
-            aux = aux.getProx();*/
+        while(aux != null && info.compareToIgnoreCase(aux.getInfo()) == -1)
+            aux = aux.getProx();
         
-        return null;
+        return aux;
     }
 
     @Override
     public void exibir() {
+        NoEstado aux = inicio;
+        
+        while(aux != null) {
+            System.out.println(aux.getInfo());
+            aux = aux.getProx();
+        }
     }
 }

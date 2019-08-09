@@ -7,7 +7,12 @@ public class Estados_Cidades {
     public static void main(String[] args) {
         ListaEstados cabEstado = new ListaEstados();
         
-        //cabEstado.inserirOrdenado("São Paulo");
+        cabEstado.inserir("São Paulo");
+        cabEstado.inserir("zarana");
+        
+        cabEstado.exibir();
+      
+        
     }
     
 }
