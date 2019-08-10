@@ -1,19 +1,26 @@
 package classes;
 
-public class ListaCidades extends Lista{
-
-    @Override
-    public void inicializar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+public class ListaCidades {
+    
+    public void inserir(NoEstado estado, NoCidade novaCidade) {
+        
+        if(estado.getCidade() == null)
+            estado.setCidade(novaCidade);
+        else {
+           if(!buscar(estado.getCidade(), novaCidade.getInfo())) {
+               novaCidade.setBaixo(estado.getCidade());
+               estado.setCidade(novaCidade);
+           }
+        }
     }
-
-    @Override
-    public void inserir(String info) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void exibir() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
+    private boolean buscar(NoCidade inicio, String info) {
+        NoCidade aux = inicio;
+        while(aux.getBaixo() != null && info.compareToIgnoreCase(aux.getInfo()) != 0)
+            aux = aux.getBaixo();
+       
+        if(info.compareToIgnoreCase(aux.getInfo()) == 0)
+            return true;
+        return false;
     }
 }
