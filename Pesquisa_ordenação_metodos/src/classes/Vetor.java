@@ -8,6 +8,10 @@ public class Vetor {
         this.vet = new int[100];
         this.TL = 0;
     }
+
+    public int getTL() {
+        return TL;
+    }
     
     public void exibir() {
         for (int i = 0; i < TL; i++)
@@ -46,12 +50,37 @@ public class Vetor {
         return -1;
     }
     
-    /*public int busca_sequencial(int chave) {
+    public int busca_sequencial(int chave) {
+        int pos = 0;
         
+        while(pos < TL && chave > vet[pos])
+            pos++;
+        
+        if(pos < TL && chave == vet[pos])
+            return pos;
+        return pos + TL;
     }
     
-    public int busca_binaria() {
+    /*public int busca_binaria(int chave) {
+        int inicio = 0;
+        int fim = TL;
+        int meio = fim/2;
         
+        while(inicio < meio && chave != vet[meio]) {
+            if(chave < vet[meio])
+                fim = meio - 1;
+            else
+                inicio = meio + 1;
+            
+    
+            meio = (inicio + fim) / 2;
+        }
+        
+        if(chave == vet[meio]
+            return meio;
+        if(chave > vet[meio]
+            return meio + TL + 1;
+        return meio + TL;
     }*/
     
     //-------------- Métodos de Ordenação

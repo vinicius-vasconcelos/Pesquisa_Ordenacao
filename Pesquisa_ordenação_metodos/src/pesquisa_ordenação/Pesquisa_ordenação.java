@@ -34,6 +34,25 @@ public class Pesquisa_ordenação {
         int pos = vet.busca_sentinela(chave);
         System.out.println("valor: " + chave + " na pos: " + pos);*/
         
+        System.out.println("\n--------------------------\n");
+        int chave = 9;
+        int pos = vet.busca_sequencial(chave);
+        System.out.println("valor: " + chave + " na pos: " + pos);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         /*Lista cab = new Lista();
         
         cab.inserirNoInicio(1);
