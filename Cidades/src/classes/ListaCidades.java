@@ -26,16 +26,13 @@ public class ListaCidades {
         this.fim = fim;
     }
     
-    
-    
     public void inserir(NoEstado estado, String infoNovaCidade) {
         NoCidade novaCidade = new NoCidade(null, null, infoNovaCidade);
         
-        if(estado.getCidade() == null) {
-            inicio = fim = novaCidade;
-            estado.setCidade(this);
+        if(estado.getCidade().inicio == null) {
+            estado.getCidade().inicio = estado.getCidade().fim = novaCidade;
         } else {
-            NoCidade pos = buscar(infoNovaCidade);
+            NoCidade pos = buscar(estado, infoNovaCidade);
             
             if(pos == null) { //ultima caixa
                 fim.setBaixo(novaCidade);
@@ -58,8 +55,8 @@ public class ListaCidades {
         }
     }
     
-    private NoCidade buscar(String info) {
-        NoCidade aux = inicio;
+    private NoCidade buscar(NoEstado estado, String info) {
+        NoCidade aux = estado.getCidade().inicio;
         
         while(aux != null && info.compareToIgnoreCase(aux.getInfo()) > 0)
             aux = aux.getBaixo();
