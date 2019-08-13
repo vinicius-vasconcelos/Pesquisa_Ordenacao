@@ -12,8 +12,9 @@ public class Estados_Cidades {
         //cabEstado.inserir("Rio de janeiro", "Jacarepagua");
         cabEstado.inserir("Sao Paulo", "Andradina");
         cabEstado.inserir("Parana", "maringa");
+        //cabEstado.inserir("Acre", "maringa");
         
-        cabEstado.exibir();
+       cabEstado.exibir();
       
         
     }

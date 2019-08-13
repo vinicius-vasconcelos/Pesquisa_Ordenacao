@@ -17,10 +17,12 @@ public class ListaEstados {
 
     public void inserir(String estado, String cidade) {
         NoEstado novoEstado = new NoEstado(null, null, null, estado);
+        NoEstado auxEst = null;
         
         if(inicio == null) {
             inicio = fim = novoEstado;
-            cabCidades.inserir(inicio, new NoCidade(null, cidade));
+            
+            auxEst = inicio;
         }
         else {
             NoEstado pos = buscar(estado);
@@ -29,27 +31,25 @@ public class ListaEstados {
                 fim.setProx(novoEstado);
                 novoEstado.setAnt(fim);
                 fim = novoEstado;
-                
-               cabCidades.inserir(fim, new NoCidade(null, cidade));
             } else {
                 if(estado.compareToIgnoreCase(pos.getInfo()) != 0) {
                     if(pos.getAnt()== null) {
                         pos.setAnt(novoEstado);
                         novoEstado.setProx(pos);
                         inicio = novoEstado;
-                        
-                       cabCidades.inserir(inicio, new NoCidade(null, cidade));
                     } else {
                         novoEstado.setProx(pos);
                         pos.getAnt().setProx(novoEstado);
                         novoEstado.setAnt(pos.getAnt());
                         pos.setAnt(novoEstado);
-                        
-                        cabCidades.inserir(novoEstado, new NoCidade(null, cidade)); 
                     }
                 }
             }
+            
+            auxEst = pos;
         }
+        
+        cabCidades.inserir(auxEst, cidade);
     }
     
     private NoEstado buscar(String info) {
@@ -67,7 +67,7 @@ public class ListaEstados {
         while(auxEst != null) {
             System.out.println(auxEst.getInfo());
             
-            auxCid = auxEst.getCidade();
+            auxCid = auxEst.getCidade().getInicio();
             while(auxCid != null) {
                 System.out.println("\t" + auxCid.getInfo());
                 auxCid = auxCid.getBaixo();
