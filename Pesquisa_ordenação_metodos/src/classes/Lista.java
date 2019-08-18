@@ -45,28 +45,92 @@ public class Lista {
         No aux = inicio;
         
         while(aux != null) {
-            System.out.println(aux.getInfo());
+            System.out.print(aux.getInfo() + " | ");
             aux = aux.getProx();
         }
     }
     
     //-------------- Métodos de Pesquisa
-    /*public int busca_exaustiva(int chave) {
+    public No busca_exaustiva(int chave) {
+        No aux = inicio;
+        
+        while(aux != null && aux.getInfo() != chave)
+            aux = aux.getProx();
+       
+        return aux;
     }
     
-    public int busca_sentinela(int chave) {
+    public No busca_sentinela(int chave) {
+        inserirNoFinal(chave);
+        No aux = inicio;
+        
+        while(aux.getInfo() != chave)
+            aux = aux.getProx();
+        
+        if(fim == aux)
+            return null;
+        return aux;
     }
     
-    public int busca_sequencial(int chave) {
+    public No busca_sequencial(int chave) {
+        No aux = inicio;
+        
+        while(aux != null && chave > aux.getInfo())
+            aux = aux.getProx();
+        
+        return aux;
     }
     
-    public int busca_binaria() {
+    private No retornaMeio(No newIni, No newFim) {
+        No aux = newIni;
+        No newMeio = newIni;
+        int count = 0;
+        
+        while(aux != newFim) {
+            count++;
+            aux = aux.getProx();
+        }
+        
+        for (int i = 0; i < count / 2; i++) 
+            newMeio = newMeio.getProx();
+        
+        return newMeio;
+    }
+    
+    public No busca_binaria(int chave) {
+        No begin = inicio;
+        No end =  fim;
+        No meio = retornaMeio(begin, end);
+        
+        while(begin != meio && chave != meio.getInfo()) {
+            if(chave < meio.getInfo())
+                end = meio;
+            else
+                begin = meio.getProx();
+            
+            meio = retornaMeio(begin, end);
+        }
+       
+        return meio;
     }
     
     //-------------- Métodos de Ordenação
     
     public void insercao_direta() {
-       
-    }*/
+        No pos = null;
+        int aux = 0;
+        
+        for(No i = inicio.getProx(); i != null; i = i.getProx()) {
+            aux = i.getInfo();
+            pos = i;
+            
+            while(pos != inicio && aux < pos.getAnt().getInfo()) {
+                pos.setInfo(pos.getAnt().getInfo());
+                pos = pos.getAnt();
+            }
+            
+            pos.setInfo(aux);
+        }
+    }
     
 }

@@ -61,14 +61,15 @@ public class Vetor {
         return pos + TL;
     }
     
-    /*public int busca_binaria(int chave) {
+    public int busca_binaria(int chave) {
         int inicio = 0;
         int fim = TL;
         int meio = fim/2;
         
         while(inicio < meio && chave != vet[meio]) {
+            
             if(chave < vet[meio])
-                fim = meio - 1;
+                fim = meio;
             else
                 inicio = meio + 1;
             
@@ -76,12 +77,12 @@ public class Vetor {
             meio = (inicio + fim) / 2;
         }
         
-        if(chave == vet[meio]
+        if(chave == vet[meio])
             return meio;
-        if(chave > vet[meio]
+        if(chave > vet[meio])
             return meio + TL + 1;
         return meio + TL;
-    }*/
+    }
     
     //-------------- Métodos de Ordenação
     
