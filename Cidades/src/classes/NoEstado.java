@@ -3,14 +3,13 @@ package classes;
 public class NoEstado{
     private NoEstado ant;
     private NoEstado prox;
-    private ListaCidades cidade;
-    
     private String info;
+    private ListaCidades cidades;
 
-    public NoEstado(NoEstado ant, NoEstado prox, ListaCidades cidade, String info) {
+    public NoEstado(NoEstado ant, NoEstado prox, ListaCidades cidades, String info) {
         this.ant = ant;
         this.prox = prox;
-        this.cidade = cidade;
+        this.cidades = cidades;
         this.info = info;
     }
 
@@ -30,12 +29,12 @@ public class NoEstado{
         this.prox = prox;
     }
 
-    public ListaCidades getCidade() {
-        return cidade;
+    public ListaCidades getCidades() {
+        return cidades;
     }
 
-    public void setCidade(ListaCidades cidade) {
-        this.cidade = cidade;
+    public void setCidades(ListaCidades cidades) {
+        this.cidades = cidades;
     }
 
     public String getInfo() {

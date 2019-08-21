@@ -10,7 +10,7 @@ public class ListaCidades {
         this.fim = null;
     }
 
-    public NoCidade getInicio() {
+    /*public NoCidade getInicio() {
         return inicio;
     }
 
@@ -24,43 +24,68 @@ public class ListaCidades {
 
     public void setFim(NoCidade fim) {
         this.fim = fim;
-    }
+    }*/
     
-    public void inserir(NoEstado estado, String infoNovaCidade) {
-        NoCidade novaCidade = new NoCidade(null, null, infoNovaCidade);
-        
-        if(estado.getCidade().inicio == null) {
-            estado.getCidade().inicio = estado.getCidade().fim = novaCidade;
-        } else {
-            NoCidade pos = buscar(estado, infoNovaCidade);
+    public void inserir(String infoNovaCidade) {
+      NoCidade auxPontNoCidade = buscar(infoNovaCidade);
+      
+      if(auxPontNoCidade == null) { //inserir cidade
+            NoCidade newNoCidade = new NoCidade(null, null, infoNovaCidade);
             
-            if(pos == null) { //ultima caixa
-                fim.setBaixo(novaCidade);
-                novaCidade.setCima(fim);
-                fim = novaCidade;
-            } else {
-                if(infoNovaCidade.compareToIgnoreCase(pos.getInfo()) != 0) {
-                    if(pos.getCima()== null) {
-                        pos.setCima(novaCidade);
-                        novaCidade.setBaixo(pos);
-                        inicio = novaCidade;
-                    } else {
-                        novaCidade.setBaixo(pos);
-                        pos.getCima().setBaixo(novaCidade);
-                        novaCidade.setCima(pos.getCima());
-                        pos.setCima(novaCidade);
-                    }
+            if(inicio == null) //lista vazia
+                inicio = fim = newNoCidade;
+            else { //ultima caixa
+                fim.setBaixo(newNoCidade);
+                newNoCidade.setCima(fim);
+                fim = newNoCidade;
+            }
+                
+        }else {  
+            if(infoNovaCidade.compareToIgnoreCase(auxPontNoCidade.getInfo()) != 0) { 
+                NoCidade newNoCidade = new NoCidade(null, null, infoNovaCidade);
+                
+                if(auxPontNoCidade.getCima()== null) { //inserindo no início
+                    auxPontNoCidade.setCima(newNoCidade);
+                    newNoCidade.setBaixo(auxPontNoCidade);
+                    inicio = newNoCidade;
+
+                } else { //inserindo no meio
+                    newNoCidade.setBaixo(auxPontNoCidade);
+                    auxPontNoCidade.getCima().setBaixo(newNoCidade);
+                    newNoCidade.setCima(auxPontNoCidade.getCima());
+                    auxPontNoCidade.setCima(newNoCidade);
                 }
             }
         }
     }
     
-    private NoCidade buscar(NoEstado estado, String info) {
-        NoCidade aux = estado.getCidade().inicio;
+    private NoCidade buscar(String info) {
+        NoCidade aux = inicio;
         
         while(aux != null && info.compareToIgnoreCase(aux.getInfo()) > 0)
             aux = aux.getBaixo();
         return aux;
+    }
+    
+    
+    public void exibirCidades() {
+        NoCidade auxCid = inicio;
+        
+        while(auxCid != null) {
+            System.out.println("\t" + auxCid.getInfo());
+            auxCid = auxCid.getBaixo();
+        }
+    }
+    
+    public NoCidade buscarCidade(String info) {
+        NoCidade aux = inicio;
+        
+        while(aux != null && info.compareToIgnoreCase(aux.getInfo()) > 0)
+            aux = aux.getBaixo();
+        
+        if(aux != null && info.compareToIgnoreCase(aux.getInfo()) == 0)
+            return aux;
+        return null;
     }
     
 }

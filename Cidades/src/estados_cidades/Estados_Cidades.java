@@ -7,13 +7,13 @@ public class Estados_Cidades {
     public static void main(String[] args) {
         ListaEstados cabEstado = new ListaEstados();
         
-        /*cabEstado.inserir("Sao Paulo", "Assis");
-        cabEstado.inserir("Parana", "Londrina");
-        cabEstado.inserir("Sao Paulo", "Andradina");
-        cabEstado.inserir("Parana", "maringa");
+        /*cabEstado.inserir("e", "Assis");
+        cabEstado.inserir("b", "Londrina");
+        cabEstado.inserir("e", "Andradina");
+        cabEstado.inserir("c", "maringa");
         
-        cabEstado.inserir("Acre", "Rio Branco");
-        cabEstado.inserir("Sao Paulo", "Santos");*/
+        cabEstado.inserir("f", "Rio Branco");
+        cabEstado.inserir("a", "Santos");*/
         
         cabEstado.inserir("Parana", "Londrina");
         cabEstado.inserir("Parana", "Arapongas");
@@ -29,13 +29,13 @@ public class Estados_Cidades {
         cabEstado.exibir();
        
         System.out.println("\n-------------------------------\n");
-        System.out.println(cabEstado.buscaEstado("São Paulo"));
+        System.out.println(cabEstado.buscarEstado("São Paulo"));
         
         System.out.println("\n-------------------------------\n");
-        System.out.println(cabEstado.buscaCidade("Blumenau"));
+        System.out.println(cabEstado.buscarCidade("Blumenau"));
         
-        System.out.println("\n-------------------------------\n");
-        System.out.println(cabEstado.buscaPar("Parana", "Assis"));
+        /*System.out.println("\n-------------------------------\n");
+        System.out.println(cabEstado.buscaPar("Parana", "Assis"));*/
         
     }
     

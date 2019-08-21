@@ -3,7 +3,6 @@ package classes;
 public class ListaEstados {
     private NoEstado inicio;
     private NoEstado fim;
-    private ListaCidades cabCidades;
 
     public ListaEstados() {
         this.inicio = null;
@@ -14,54 +13,42 @@ public class ListaEstados {
         inicio = fim = null;
     }
 
-    public void inserir(String estado, String cidade) {
-        NoEstado novoEstado = new NoEstado(null, null, null, estado);
-        NoEstado auxEst = null;
+    public void inserir(String novoEstado, String novaCidade) {
         
-        if(inicio == null) {
-            inicio = fim = novoEstado;
+        NoEstado auxPontEstado = buscar(novoEstado);
+        
+        if(auxPontEstado == null) { //inserir estado
+            NoEstado newNoEstado = new NoEstado(null, null, new ListaCidades(), novoEstado);
             
-            cabCidades = new ListaCidades();
-            inicio.setCidade(cabCidades);
-            cabCidades.inserir(inicio, cidade);
-        }
-        else {
-            NoEstado pos = buscar(estado);
-            
-            if(pos == null) { //ultima caixa
-                fim.setProx(novoEstado);
-                novoEstado.setAnt(fim);
-                fim = novoEstado;
-               
-                cabCidades = new ListaCidades();
-                fim.setCidade(cabCidades);
-                cabCidades.inserir(fim, cidade);
-            } else {
-                if(estado.compareToIgnoreCase(pos.getInfo()) != 0) {
-                    if(pos.getAnt()== null) {
-                        pos.setAnt(novoEstado);
-                        novoEstado.setProx(pos);
-                        inicio = novoEstado;
-                      
-                        cabCidades = new ListaCidades();
-                        inicio.setCidade(cabCidades);
-                        cabCidades.inserir(inicio, cidade);
-                    } else {
-                        novoEstado.setProx(pos);
-                        pos.getAnt().setProx(novoEstado);
-                        novoEstado.setAnt(pos.getAnt());
-                        pos.setAnt(novoEstado);
-                        
-                        cabCidades = new ListaCidades();
-                        pos.setCidade(cabCidades);
-                        cabCidades.inserir(pos, cidade);
-                    }
-                    
-                } else  pos.getCidade().inserir(pos, cidade);
+            if(inicio == null) //lista vazia
+                inicio = fim = newNoEstado;
+            else { //ultima caixa
+                fim.setProx(newNoEstado);
+                newNoEstado.setAnt(fim);
+                fim = newNoEstado;
             }
+           newNoEstado.getCidades().inserir(novaCidade);
+                
+        } else { 
             
-            
-        }
+            if(novoEstado.compareToIgnoreCase(auxPontEstado.getInfo()) != 0) { 
+                NoEstado newNoEstado = new NoEstado(null, null, new ListaCidades(), novoEstado);
+                
+                if(auxPontEstado.getAnt()== null) { //inserindo no início
+                    auxPontEstado.setAnt(newNoEstado);
+                    newNoEstado.setProx(auxPontEstado);
+                    inicio = newNoEstado;
+
+                } else { //inserindo no meio
+                    newNoEstado.setProx(auxPontEstado);
+                    auxPontEstado.getAnt().setProx(newNoEstado);
+                    newNoEstado.setAnt(auxPontEstado.getAnt());
+                    auxPontEstado.setAnt(newNoEstado);
+                }
+                newNoEstado.getCidades().inserir(novaCidade);
+            } else //estado já existente
+                auxPontEstado.getCidades().inserir(novaCidade);
+        } 
     }
     
     private NoEstado buscar(String info) {
@@ -74,21 +61,15 @@ public class ListaEstados {
 
     public void exibir() {
         NoEstado auxEst = inicio;
-        NoCidade auxCid = null;
-        
+   
         while(auxEst != null) {
             System.out.println(auxEst.getInfo());
-            
-            auxCid = auxEst.getCidade().getInicio();
-            while(auxCid != null) {
-                System.out.println("\t" + auxCid.getInfo());
-                auxCid = auxCid.getBaixo();
-            }
+            auxEst.getCidades().exibirCidades();
             auxEst = auxEst.getProx();
         }
     }
     
-    public NoEstado buscaEstado(String info) {
+    public NoEstado buscarEstado(String info) {
         NoEstado aux = inicio;
         
         while(aux != null && info.compareToIgnoreCase(aux.getInfo()) > 0)
@@ -99,32 +80,26 @@ public class ListaEstados {
         return null;
     }
     
-    public NoCidade buscaCidade(String info) {
-        NoEstado aux = inicio;
-        NoCidade auxCid = null;
-        
-        while(aux != null) {
-            auxCid = aux.getCidade().getInicio();
-            while(auxCid != null && info.compareToIgnoreCase(auxCid.getInfo()) > 0)
-                auxCid = auxCid.getBaixo();
-            
-            aux = aux.getProx();
-            
-            if(auxCid != null && info.compareToIgnoreCase(auxCid.getInfo()) == 0)
-                aux = null;
+    public NoCidade buscarCidade(String info) {
+       NoEstado auxEst = inicio;
+       NoCidade cid = null;
+   
+        while(auxEst != null) {
+            cid = auxEst.getCidades().buscarCidade(info);
+            auxEst = auxEst.getProx();
         }
-  
-        if(auxCid != null && info.compareToIgnoreCase(auxCid.getInfo()) == 0)
-            return auxCid;
+         if(cid != null && info.compareToIgnoreCase(cid.getInfo()) == 0)
+            return cid;
         return null;
+       
     }
     
     
-    public boolean buscaPar(String estado, String cidade) {
+    /*public boolean buscaPar(String estado, String cidade) {
         if(buscaEstado(estado) != null)
             if(buscaCidade(cidade) != null)
                 return true;
         
         return false;
-    }
+    }*/
 }
