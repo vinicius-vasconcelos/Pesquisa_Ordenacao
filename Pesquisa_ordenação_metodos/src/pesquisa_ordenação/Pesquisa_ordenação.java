@@ -7,25 +7,34 @@ import classes.Vetor;
 public class Pesquisa_ordenação {
 
     public static void main(String[] args) {
-       /* Vetor vet =  new Vetor();
+       /*Vetor vet =  new Vetor();
         
         vet.inserir(2);
         vet.inserir(10);
         vet.inserir(0);
         vet.inserir(1);
         vet.inserir(4);
+        vet.inserir(15);
+        vet.inserir(12);
+        vet.inserir(8);
+        vet.inserir(5);
         
         System.out.println("Vetor desordenado: \n");
-        vet.exibir();
+        vet.exibir();*/
         
-        System.out.println("\n--------------------------\n");
-        System.out.println("Vetor ordenado: \n");
+        /*System.out.println("\n--------------------------\n");
+        System.out.println("Vetor ordenado por INSERÇÃO DIRETA: \n");
         vet.insercao_direta();
         vet.exibir();
         
         System.out.println("\n--------------------------\n");
-        System.out.println("Vetor ordenado: \n");
+        System.out.println("Vetor ordenado por INSERÇÃO BINÁRIA: \n");
         vet.insercao_binaria();
+        vet.exibir();*/
+        
+        /*System.out.println("\n--------------------------\n");
+        System.out.println("Vetor ordenado por SELEÇÃO DIRETA: \n");
+        vet.selecao_direta();
         vet.exibir();*/
         
         
@@ -55,15 +64,6 @@ public class Pesquisa_ordenação {
         
         
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
         Lista cab = new Lista();
         
         cab.inserirNoInicio(2);
@@ -71,6 +71,10 @@ public class Pesquisa_ordenação {
         cab.inserirNoInicio(0);
         cab.inserirNoInicio(1);
         cab.inserirNoInicio(4);
+        cab.inserirNoInicio(15);
+        cab.inserirNoInicio(12);
+        cab.inserirNoInicio(8);
+        cab.inserirNoInicio(5);
         
         /*cab.inserirNoFinal(1);
         cab.inserirNoFinal(2);
@@ -80,13 +84,18 @@ public class Pesquisa_ordenação {
         cab.exibir();
         
         /*System.out.println("\n--------------------------\n");
-        System.out.println("Lista ordenado: \n");
+        System.out.println("Lista ordenada por INSERÇÃO DIRETA: \n");
         cab.insercao_direta();
         cab.exibir();*/
         
-        System.out.println("\n--------------------------\n");
-        System.out.println("Lista ordenado: \n");
+        /*System.out.println("\n--------------------------\n");
+        System.out.println("Lista ordenada por INSERÇÃO BINÁRIA: \n");
         cab.insercao_binaria();
+        cab.exibir();*/
+        
+        System.out.println("\n--------------------------\n");
+        System.out.println("Lista ordenada por SELEÇÃO DIRETA: \n");
+        cab.selecao_direta();
         cab.exibir();
         
         /*System.out.println("\n--------------------------\n");

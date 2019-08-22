@@ -137,4 +137,22 @@ public class Vetor {
             vet[pos] = aux;
         }
     }
+    
+    public void selecao_direta() {
+        int menor, j, pos;
+        
+        for (int i = 0; i < TL - 1; i++) {
+            menor = vet[i];
+            pos = i;
+            
+            for (j = i + 1; j < TL; j++){
+                if(vet[j] < menor){
+                    menor = vet[j];
+                    pos = j;
+                }
+            }
+            vet[pos] = vet[i];
+            vet[i] = menor;     
+        }
+    }
 }

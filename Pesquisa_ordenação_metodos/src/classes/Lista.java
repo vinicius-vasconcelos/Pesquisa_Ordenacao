@@ -166,5 +166,24 @@ public class Lista {
             pos.setInfo(aux);
         }
     }
+     
+     public void selecao_direta() {
+       int menor;
+       No j, pos;
+
+       for (No i = inicio; i.getProx() != null ; i = i.getProx()) {
+           menor = i.getInfo();
+           pos = i;
+
+           for (j = i.getProx(); j != null; j= j.getProx()){
+               if(j.getInfo() < menor){
+                   menor = j.getInfo();
+                   pos = j;
+               }
+           }
+           pos.setInfo(i.getInfo());
+           i.setInfo(menor);
+       }
+   }
     
 }
