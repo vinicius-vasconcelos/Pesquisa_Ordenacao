@@ -32,11 +32,9 @@ public class Estados_Cidades {
         System.out.println(cabEstado.buscarEstado("São Paulo"));
         
         System.out.println("\n-------------------------------\n");
-        System.out.println(cabEstado.buscarCidade("Blumenau"));
+        System.out.println(cabEstado.buscarCidade("maringa"));
         
-        /*System.out.println("\n-------------------------------\n");
-        System.out.println(cabEstado.buscaPar("Parana", "Assis"));*/
-        
+        System.out.println("\n-------------------------------\n");
+        System.out.println(cabEstado.buscaPar("São Paulo", "Assis"));   
     }
-    
 }

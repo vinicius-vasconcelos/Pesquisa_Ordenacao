@@ -83,23 +83,31 @@ public class ListaEstados {
     public NoCidade buscarCidade(String info) {
        NoEstado auxEst = inicio;
        NoCidade cid = null;
+       boolean achou = false;
    
-        while(auxEst != null) {
+        while(auxEst != null && !achou) {
             cid = auxEst.getCidades().buscarCidade(info);
+            
+            if(cid != null && info.compareToIgnoreCase(cid.getInfo()) == 0)
+                achou =  true;
+            
             auxEst = auxEst.getProx();
         }
-         if(cid != null && info.compareToIgnoreCase(cid.getInfo()) == 0)
+        
+        if(achou)
             return cid;
         return null;
        
     }
     
     
-    /*public boolean buscaPar(String estado, String cidade) {
-        if(buscaEstado(estado) != null)
-            if(buscaCidade(cidade) != null)
-                return true;
+    public boolean buscaPar(String estado, String cidade) {
+        NoEstado auxEst = buscarEstado(estado);
+        boolean achou = false;
         
-        return false;
-    }*/
+        if(auxEst != null)
+            if(auxEst.getCidades().buscarCidade(cidade) != null)
+                achou = true;
+        return achou;
+    }
 }
