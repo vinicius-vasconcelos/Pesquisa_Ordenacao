@@ -84,6 +84,27 @@ public class Vetor {
         return meio + TL;
     }
     
+    public int busca_binaria2(int chave, int TL) {
+        int inicio = 0;
+        int fim = TL;
+        int meio = fim/2;
+        
+        while(inicio < meio && chave != vet[meio]) {
+            
+            if(chave < vet[meio])
+                fim = meio;
+            else
+                inicio = meio + 1;
+            
+    
+            meio = (inicio + fim) / 2;
+        }
+       
+        if(chave > vet[meio])
+            return meio + 1;
+        return meio;
+    }
+    
     //-------------- Métodos de Ordenação
     
     public void insercao_direta() {
@@ -98,6 +119,20 @@ public class Vetor {
                 vet[pos] = vet[pos-1];
                 pos--;
             }
+            
+            vet[pos] = aux;
+        }
+    }
+    
+    public void insercao_binaria() {
+        int pos, aux;
+        
+        for (int i = 1; i < TL; i++) {
+            aux = vet[i];
+            pos = busca_binaria2(aux, i);
+            
+            for (int j = i; j > pos; j--) 
+                vet[j] = vet[j-1];
             
             vet[pos] = aux;
         }

@@ -7,7 +7,7 @@ import classes.Vetor;
 public class Pesquisa_ordenação {
 
     public static void main(String[] args) {
-        /*Vetor vet =  new Vetor();
+       /* Vetor vet =  new Vetor();
         
         vet.inserir(2);
         vet.inserir(10);
@@ -21,6 +21,11 @@ public class Pesquisa_ordenação {
         System.out.println("\n--------------------------\n");
         System.out.println("Vetor ordenado: \n");
         vet.insercao_direta();
+        vet.exibir();
+        
+        System.out.println("\n--------------------------\n");
+        System.out.println("Vetor ordenado: \n");
+        vet.insercao_binaria();
         vet.exibir();*/
         
         
@@ -74,9 +79,14 @@ public class Pesquisa_ordenação {
         System.out.println("Lista desordenado: \n");
         cab.exibir();
         
-        System.out.println("\n--------------------------\n");
+        /*System.out.println("\n--------------------------\n");
         System.out.println("Lista ordenado: \n");
         cab.insercao_direta();
+        cab.exibir();*/
+        
+        System.out.println("\n--------------------------\n");
+        System.out.println("Lista ordenado: \n");
+        cab.insercao_binaria();
         cab.exibir();
         
         /*System.out.println("\n--------------------------\n");
@@ -99,10 +109,10 @@ public class Pesquisa_ordenação {
         No pos = cab.busca_sequencial(chave);
         System.out.println("valor: " + chave + " na pos: " + pos);*/
         
-        System.out.println("\n--------------------------\n");
+        /*System.out.println("\n--------------------------\n");
         int chave = 5;
         No pos = cab.busca_binaria(chave);
-        System.out.println("valor: " + chave + " na pos: " + pos.getInfo());
+        System.out.println("valor: " + chave + " na pos: " + pos.getInfo());*/
     }
     
 }

@@ -114,6 +114,25 @@ public class Lista {
         return meio;
     }
     
+    public No busca_binaria2(int chave, No TL) {
+        No begin = inicio;
+        No end =  TL;
+        No meio = retornaMeio(begin, end);
+        
+        while(begin != meio && chave != meio.getInfo()) {
+            if(chave < meio.getInfo())
+                end = meio;
+            else
+                begin = meio.getProx();
+            
+            meio = retornaMeio(begin, end);
+        }   
+       
+        if(chave > meio.getInfo())
+            return meio.getProx();
+        return meio;
+    }
+    
     //-------------- Métodos de Ordenação
     
     public void insercao_direta() {
@@ -128,6 +147,21 @@ public class Lista {
                 pos.setInfo(pos.getAnt().getInfo());
                 pos = pos.getAnt();
             }
+            
+            pos.setInfo(aux);
+        }
+    }
+    
+     public void insercao_binaria() {
+        No pos = null;
+        int aux = 0;
+        
+        for (No i = inicio.getProx(); i != null; i = i.getProx()) {
+            aux = i.getInfo();
+            pos = busca_binaria2(aux, i);
+            
+            for (No j = i; j != pos; j = j.getAnt()) 
+                j.setInfo(j.getAnt().getInfo());
             
             pos.setInfo(aux);
         }
