@@ -7,7 +7,7 @@ import classes.Vetor;
 public class Pesquisa_ordenação {
 
     public static void main(String[] args) {
-       /*Vetor vet =  new Vetor();
+       Vetor vet =  new Vetor();
         
         vet.inserir(2);
         vet.inserir(10);
@@ -20,7 +20,7 @@ public class Pesquisa_ordenação {
         vet.inserir(5);
         
         System.out.println("Vetor desordenado: \n");
-        vet.exibir();*/
+        vet.exibir();
         
         /*System.out.println("\n--------------------------\n");
         System.out.println("Vetor ordenado por INSERÇÃO DIRETA: \n");
@@ -36,6 +36,21 @@ public class Pesquisa_ordenação {
         System.out.println("Vetor ordenado por SELEÇÃO DIRETA: \n");
         vet.selecao_direta();
         vet.exibir();*/
+        
+        /*System.out.println("\n--------------------------\n");
+        System.out.println("Vetor ordenado por BUBBLE SORT: \n");
+        vet.bubble_sort();
+        vet.exibir();*/
+        
+        /*System.out.println("\n--------------------------\n");
+        System.out.println("Vetor ordenado por SHAKE SORT: \n");
+        vet.shake_sort();
+        vet.exibir();*/
+        
+        System.out.println("\n--------------------------\n");
+        System.out.println("Vetor ordenado por SHAKE SORT: \n");
+        vet.heap_sort();
+        vet.exibir();
         
         
         /*System.out.println("\n--------------------------\n");
@@ -59,12 +74,15 @@ public class Pesquisa_ordenação {
         int pos = vet.busca_binaria(chave);
         System.out.println("valor: " + chave + " na pos: " + pos);*/
         
+    
+       
         
         
         
         
         
-        Lista cab = new Lista();
+        
+        /*Lista cab = new Lista();
         
         cab.inserirNoInicio(2);
         cab.inserirNoInicio(10);
@@ -76,12 +94,12 @@ public class Pesquisa_ordenação {
         cab.inserirNoInicio(8);
         cab.inserirNoInicio(5);
         
-        /*cab.inserirNoFinal(1);
+        cab.inserirNoFinal(1);
         cab.inserirNoFinal(2);
-        cab.inserirNoFinal(3);*/
+        cab.inserirNoFinal(3);
         
         System.out.println("Lista desordenado: \n");
-        cab.exibir();
+        cab.exibir();*/
         
         /*System.out.println("\n--------------------------\n");
         System.out.println("Lista ordenada por INSERÇÃO DIRETA: \n");
@@ -91,12 +109,12 @@ public class Pesquisa_ordenação {
         /*System.out.println("\n--------------------------\n");
         System.out.println("Lista ordenada por INSERÇÃO BINÁRIA: \n");
         cab.insercao_binaria();
-        cab.exibir();*/
+        cab.exibir();
         
         System.out.println("\n--------------------------\n");
         System.out.println("Lista ordenada por SELEÇÃO DIRETA: \n");
         cab.selecao_direta();
-        cab.exibir();
+        cab.exibir();*/
         
         /*System.out.println("\n--------------------------\n");
         int chave = 2;

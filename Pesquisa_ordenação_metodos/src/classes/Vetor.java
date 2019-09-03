@@ -155,4 +155,71 @@ public class Vetor {
             vet[i] = menor;     
         }
     }
+    
+    public void bubble_sort() {
+        int TL2 = TL;
+        int aux;
+        
+        while(TL2 > 1) {
+            for(int i = 0; i < TL2-1; i++)
+                if(vet[i] > vet[i+1]){
+                    aux = vet[i];
+                    vet[i] = vet[i+1];
+                    vet[i+1] = aux;
+                }
+            TL2--;
+        }
+    }
+    
+    public void shake_sort() {
+        int inicio = 0;
+        int fim = TL;
+        int aux, i;
+        
+        while(inicio < fim) {
+            for(i = inicio; i < fim-1; i++)
+                if(vet[i] > vet[i+1]){
+                    aux = vet[i];
+                    vet[i] = vet[i+1];
+                    vet[i+1] = aux;
+                }
+            fim--;
+            
+            for(i = fim; i > inicio; i--)
+                  if(vet[i] < vet[i-1]){
+                      aux = vet[i];
+                      vet[i] = vet[i-1];
+                      vet[i-1] = aux;
+                  }
+            inicio++;
+        }
+    }
+    
+    public void heap_sort() {
+        int aux, pai, FE, FD, maiorF;
+        int TL2 = TL;
+        
+        while(TL2 > 1) {
+            
+            for(pai = (TL2/2) - 1; pai >= 0; pai --){
+                FE = pai + pai + 1;
+                FD = FE + 1;
+                maiorF = FE;
+                
+                if(FD < TL2 && vet[FD] > vet[FE])
+                    maiorF = FD;
+                
+                if(vet[maiorF] > vet[pai]){
+                      aux = vet[pai];
+                      vet[pai] = vet[maiorF];
+                      vet[maiorF] = aux;
+                  }    
+            }
+            
+            aux = vet[0];
+            vet[0] = vet[TL2-1];
+            vet[TL2-1] = aux;
+            TL2--;
+        }
+    }
 }
