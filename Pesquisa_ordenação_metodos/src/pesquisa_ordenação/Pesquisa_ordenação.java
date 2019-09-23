@@ -10,14 +10,14 @@ public class Pesquisa_ordenação {
        Vetor vet =  new Vetor();
         
         vet.inserir(2);
-        vet.inserir(10);
-        vet.inserir(0);
-        vet.inserir(1);
-        vet.inserir(4);
-        vet.inserir(15);
-        vet.inserir(12);
+        vet.inserir(100);
         vet.inserir(8);
-        vet.inserir(5);
+        vet.inserir(1);
+        vet.inserir(904);
+        vet.inserir(105);
+        vet.inserir(120);
+        vet.inserir(800);
+        vet.inserir(15);
         
         System.out.println("Vetor desordenado: \n");
         vet.exibir();
@@ -47,10 +47,26 @@ public class Pesquisa_ordenação {
         vet.shake_sort();
         vet.exibir();*/
         
-        System.out.println("\n--------------------------\n");
+        /*System.out.println("\n--------------------------\n");
         System.out.println("Vetor ordenado por SHAKE SORT: \n");
         vet.heap_sort();
+        vet.exibir();*/
+        
+        /*System.out.println("\n--------------------------\n");
+        System.out.println("Vetor ordenado por GNOME SORT: \n");
+        vet.gnome_sort();
+        vet.exibir();*/
+        
+        /*System.out.println("\n--------------------------\n");
+        System.out.println("Vetor ordenado por COMB SORT: \n");
+        vet.comb_sort();
+        vet.exibir();*/
+        
+        System.out.println("\n--------------------------\n");
+        System.out.println("Vetor ordenado por RADIX SORT: \n");
+        vet.radix_sort();
         vet.exibir();
+        
         
         
         /*System.out.println("\n--------------------------\n");

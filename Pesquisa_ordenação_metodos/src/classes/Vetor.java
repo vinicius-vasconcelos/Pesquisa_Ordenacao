@@ -222,4 +222,82 @@ public class Vetor {
             TL2--;
         }
     }
+    
+
+    
+    public void gnome_sort() {
+       int aux, i, j;
+       
+        for (i = 0; i < TL-1; i++) {
+            if(vet[i] > vet[i+1]) {
+                aux = vet[i];
+                vet[i] = vet[i+1];
+                vet[i+1] = aux;
+                
+                j = i;
+                while(j > 0 && vet[j] < vet[j-1]) {
+                    aux = vet[j];
+                    vet[j] = vet[j-1];
+                    vet[j-1] = aux;
+                    j--;
+                }
+                
+                    
+            }
+        }
+    }   
+    
+    
+    public void comb_sort() {
+        int aux;
+        int gap = (int)(TL/1.3);
+        
+        while(gap > 0) {
+            for (int i = 0; i+gap < TL; i++) {
+                if(vet[i] > vet[i+gap]) {
+                    aux =  vet[i];
+                    vet[i] = vet[i+gap];
+                    vet[i+gap] = aux;
+                }
+            }
+            gap /= 1.3;
+        }
+    }
+    
+    public void radix_sort() {
+        int vetAux[] = new int[TL];
+        int vetCount[] = new int[10];
+        int maiorVet = 0;
+        int div = 1;
+        int pos, pos2;
+        
+        for (int i = 0; i < TL; i++) 
+            if(vet[i] > maiorVet)
+                maiorVet = vet[i];
+        
+        while((maiorVet/div) > 0) {
+            
+            for (int i = 0; i < TL; i++)
+                vetCount[(vet[i]/div)%10]++;
+            
+            for (int i = 0; i < vetCount.length-1; i++)
+                vetCount[i+1] = vetCount[i] + vetCount[i+1];
+            
+            for (int i = TL -1; i >= 0; i--){
+                pos = (vet[i]/div) % 10;
+                vetCount[pos]--;
+                pos2 = vetCount[pos];
+                vetAux[pos2] = vet[i];
+            }
+            
+             for (int i = 0; i < TL; i++)
+                 vet[i] = vetAux[i];
+            
+            div *= 10;
+            
+            for (int i = 0; i < vetCount.length; i++)
+                vetCount[i] = 0;
+        }
+    }
+        
 }
