@@ -48,9 +48,24 @@ public class Pesquisa_ordenação {
         vet.exibir();*/
         
         /*System.out.println("\n--------------------------\n");
-        System.out.println("Vetor ordenado por SHAKE SORT: \n");
+        System.out.println("Vetor ordenado por HEAP SORT: \n");
         vet.heap_sort();
         vet.exibir();*/
+        
+        /*System.out.println("\n--------------------------\n");
+        System.out.println("Vetor ordenado por SHELL SORT: \n");
+        vet.shell_sort();
+        vet.exibir();*/
+        
+        /*System.out.println("\n--------------------------\n");
+        System.out.println("Vetor ordenado por QUICK SORT: \n");
+        vet.quick_sort();
+        vet.exibir();*/
+        
+        System.out.println("\n--------------------------\n");
+        System.out.println("Vetor ordenado por QUICK SORT PIVOT: \n");
+        vet.quick_sort_pivot();
+        vet.exibir();
         
         /*System.out.println("\n--------------------------\n");
         System.out.println("Vetor ordenado por GNOME SORT: \n");
@@ -62,10 +77,10 @@ public class Pesquisa_ordenação {
         vet.comb_sort();
         vet.exibir();*/
         
-        System.out.println("\n--------------------------\n");
+        /*System.out.println("\n--------------------------\n");
         System.out.println("Vetor ordenado por RADIX SORT: \n");
         vet.radix_sort();
-        vet.exibir();
+        vet.exibir();*/
         
         
         
