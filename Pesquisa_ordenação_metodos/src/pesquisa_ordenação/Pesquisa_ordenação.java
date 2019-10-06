@@ -77,7 +77,6 @@ public class Pesquisa_ordenação {
         vet.merge_sort2();
         vet.exibir();*/
         
-        
         /*System.out.println("\n--------------------------\n");
         System.out.println("Vetor ordenado por COUNT SORT: \n");
         vet.count_sort();
@@ -138,6 +137,11 @@ public class Pesquisa_ordenação {
         
         
         
+        
+        
+        
+        
+        /* ---------- LISTA ENCADEADA ---------- */
         
        /* Lista cab = new Lista();
         
@@ -238,7 +242,10 @@ public class Pesquisa_ordenação {
         cab.gnome_sort();
         cab.exibir();*/
         
-        
+        /*System.out.println("\n--------------------------\n");
+        System.out.println("Lista ordenada por TIM SORT : \n");
+        cab.tim_sort();
+        cab.exibir();*/
         
         
         /* ------------- BUCAS ------------- */
