@@ -1,5 +1,7 @@
 package classes;
 
+import java.util.Arrays;
+
 public class Vetor {
 
     private int vet[];
@@ -312,41 +314,152 @@ public class Vetor {
         int pivot = vet[(i + j) / 2];
         int aux;
 
-        while (i < j) {
+        while (i <= j) {
             while (vet[i] < pivot) {
                 i++;
             }
- 
+
             while (vet[j] > pivot) {
                 j--;
             }
-            
-            if(i <= j) {
+
+            if (i <= j) {
                 aux = vet[i];
                 vet[i] = vet[j];
                 vet[j] = aux;
-                
+
                 i++;
-                j++;
+                j--;
             }
         }
 
         if (ini < j) {
-            quick_sort_pv(ini, j);
+            quick_sort_pv(ini, j + 1);
         }
         if (i < fim) {
             quick_sort_pv(i, fim);
         }
     }
-    
+
     public void merge_sort() {
-        int vet1[] = new int [TL/2];
-        int vet2[] = new int [TL/2];
+        int vet1[] = new int[TL / 2];
+        int vet2[] = new int[TL / 2];
         int seq = 1;
-        
-        //while(seq < TL) {
-            //particao(vet1, vet2);
+
+        while (seq < TL - 1) {
+            particao(vet1, vet2);
+            fusao(vet1, vet2, seq);
+            seq *= 2;
+        }
     }
+
+    private void particao(int vet1[], int vet2[]) {
+        int aux = TL / 2;
+
+        for (int i = 0; i < aux; i++) {
+            vet1[i] = vet[i];
+            vet2[i] = vet[i + aux];
+        }
+    }
+
+    private void fusao(int vet1[], int vet2[], int seq) {
+        int i = 0;
+        int j = 0;
+        int k = 0;
+        int seq_aux = seq;
+
+        while (k < TL - 1) {
+
+            while (i < seq && j < seq) {
+                if (vet1[i] < vet2[j]) {
+                    vet[k++] = vet1[i++];
+                } else {
+                    vet[k++] = vet2[j++];
+                }
+            }
+
+            while (i < seq) {
+                vet[k++] = vet1[i++];
+            }
+
+            while (j < seq) {
+                vet[k++] = vet2[j++];
+            }
+
+            seq += seq_aux;
+        }
+    }
+
+    public void merge_sort2() {
+        int aux[] = new int[TL];
+        merge(aux, 0, TL - 1);
+    }
+
+    private void merge(int aux[], int esq, int dir) {
+        if (esq < dir) {
+            int meio = (esq + dir) / 2;
+            merge(aux, esq, meio);
+            merge(aux, meio + 1, dir);
+            fusao2(aux, esq, meio, meio + 1, dir);
+        }
+    }
+
+    private void fusao2(int aux[], int ini1, int fim1, int ini2, int fim2) {
+        int k = 0, i = ini1, j = ini2;
+
+        while (i <= fim1 && j <= fim2) {
+            aux[k++] = vet[i] < vet[j] ? vet[i++] : vet[j++];
+        }
+
+        while (i <= fim1) {
+            aux[k++] = vet[i++];
+        }
+
+        while (j <= fim1) {
+            aux[k++] = vet[j++];
+        }
+
+        for (int l = 0; l < k; l++) {
+            vet[l + ini1] = aux[l];
+        }
+    }
+
+    private int findMinVetor() {
+        Integer min = (TL > 0) ? vet[0] : null;
+        for (int i = 0; i < TL; i++) {
+            if (vet[i] < min) {
+                min = vet[i];
+            }
+        }
+        return min;
+    }
+
+    public void count_sort() {
+        int max = Arrays.stream(vet).max().getAsInt();
+        int min = findMinVetor();
+        int range = max - min + 1;
+        int count[] = new int[range];
+        int output[] = new int[TL];
+        for (int i = 0; i < TL; i++) {
+            count[vet[i] - min]++;
+        }
+
+        for (int i = 1; i < count.length; i++) {
+            count[i] += count[i - 1];
+        }
+
+        for (int i = TL - 1; i >= 0; i--) {
+            output[count[vet[i] - min] - 1] = vet[i];
+            count[vet[i] - min]--;
+        }
+
+        for (int i = 0; i < TL; i++) {
+            vet[i] = output[i];
+        }
+    }
+    
+    /*public void bucket_sort() {
+    }*/
 
     public void gnome_sort() {
         int aux, i, j;
@@ -364,7 +477,6 @@ public class Vetor {
                     vet[j - 1] = aux;
                     j--;
                 }
-
             }
         }
     }

@@ -62,10 +62,32 @@ public class Pesquisa_ordenação {
         vet.quick_sort();
         vet.exibir();*/
         
-        System.out.println("\n--------------------------\n");
+        /*System.out.println("\n--------------------------\n");
         System.out.println("Vetor ordenado por QUICK SORT PIVOT: \n");
         vet.quick_sort_pivot();
-        vet.exibir();
+        vet.exibir();*/
+        
+        /*System.out.println("\n--------------------------\n");
+        System.out.println("Vetor ordenado por MEGER SORT: \n");
+        vet.merge_sort();
+        vet.exibir();*/
+        
+        /*System.out.println("\n--------------------------\n");
+        System.out.println("Vetor ordenado por MEGER 2 SORT: \n");
+        vet.merge_sort2();
+        vet.exibir();*/
+        
+        
+        /*System.out.println("\n--------------------------\n");
+        System.out.println("Vetor ordenado por COUNT SORT: \n");
+        vet.count_sort();
+        vet.exibir();*/
+        
+        /*System.out.println("\n--------------------------\n");
+        System.out.println("Vetor ordenado por BUCKET SORT: \n");
+        vet.bucket_sort();
+        vet.exibir();*/
+        
         
         /*System.out.println("\n--------------------------\n");
         System.out.println("Vetor ordenado por GNOME SORT: \n");
@@ -83,6 +105,7 @@ public class Pesquisa_ordenação {
         vet.exibir();*/
         
         
+        /* ------------- BUCAS ------------- */
         
         /*System.out.println("\n--------------------------\n");
         int chave = 15;
@@ -113,7 +136,7 @@ public class Pesquisa_ordenação {
         
         
         
-        /*Lista cab = new Lista();
+        Lista cab = new Lista();
         
         cab.inserirNoInicio(2);
         cab.inserirNoInicio(10);
@@ -130,7 +153,7 @@ public class Pesquisa_ordenação {
         cab.inserirNoFinal(3);
         
         System.out.println("Lista desordenado: \n");
-        cab.exibir();*/
+        cab.exibir();
         
         /*System.out.println("\n--------------------------\n");
         System.out.println("Lista ordenada por INSERÇÃO DIRETA: \n");
