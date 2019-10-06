@@ -68,7 +68,6 @@ public class Pesquisa_ordenação {
         vet.exibir();*/
         
         /*System.out.println("\n--------------------------\n");
-<<<<<<< HEAD
         System.out.println("Vetor ordenado por MEGER SORT: \n");
         vet.merge_sort();
         vet.exibir();*/
@@ -144,12 +143,12 @@ public class Pesquisa_ordenação {
         
         cab.inserirNoInicio(2);
         cab.inserirNoInicio(10);
-        cab.inserirNoInicio(0);
+        cab.inserirNoInicio(50);
         cab.inserirNoInicio(1);
         cab.inserirNoInicio(4);
         cab.inserirNoInicio(15);
         cab.inserirNoInicio(12);
-        //cab.inserirNoInicio(8);
+        cab.inserirNoInicio(8);
         //cab.inserirNoInicio(5);
         
         /*cab.inserirNoFinal(1);
@@ -199,10 +198,48 @@ public class Pesquisa_ordenação {
         cab.quick_sort();
         cab.exibir();*/
         
-        System.out.println("\n--------------------------\n");
+        /*System.out.println("\n--------------------------\n");
         System.out.println("Lista ordenada por QUICK SORT PIVOT: \n");
         cab.quick_sort_pivot();
-        cab.exibir();
+        cab.exibir();*/
+        
+        /*System.out.println("\n--------------------------\n");
+        System.out.println("Lista ordenada por MERGE SORT: \n");
+        cab.merge_sort();
+        cab.exibir();*/
+        
+        /*System.out.println("\n--------------------------\n");
+        System.out.println("Lista ordenada por MERGE SORT 2: \n");
+        cab.merge_sort2();
+        cab.exibir();*/
+        
+        /*System.out.println("\n--------------------------\n");
+        System.out.println("Lista ordenada por COUNT SORT : \n");
+        cab.count_sort();
+        cab.exibir();*/
+        
+        /*System.out.println("\n--------------------------\n");
+        System.out.println("Lista ordenada por BUCKET SORT : \n");
+        cab.bucket_sort(5);
+        cab.exibir();*/
+        
+        /*System.out.println("\n--------------------------\n");
+        System.out.println("Lista ordenada por RADIX SORT : \n");
+        cab.radix_sort();
+        cab.exibir();*/
+        
+        /*System.out.println("\n--------------------------\n");
+        System.out.println("Lista ordenada por COMB SORT : \n");
+        cab.comb_sort();
+        cab.exibir();*/
+        
+        /*System.out.println("\n--------------------------\n");
+        System.out.println("Lista ordenada por GNOME SORT : \n");
+        cab.gnome_sort();
+        cab.exibir();*/
+        
+        
+        
         
         /* ------------- BUCAS ------------- */
         
