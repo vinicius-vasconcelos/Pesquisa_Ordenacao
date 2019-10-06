@@ -7,7 +7,7 @@ import classes.Vetor;
 public class Pesquisa_ordenação {
 
     public static void main(String[] args) {
-       Vetor vet =  new Vetor();
+        /*Vetor vet =  new Vetor();
         
         vet.inserir(2);
         vet.inserir(100);
@@ -20,7 +20,7 @@ public class Pesquisa_ordenação {
         vet.inserir(15);
         
         System.out.println("Vetor desordenado: \n");
-        vet.exibir();
+        vet.exibir();*/
         
         /*System.out.println("\n--------------------------\n");
         System.out.println("Vetor ordenado por INSERÇÃO DIRETA: \n");
@@ -68,6 +68,7 @@ public class Pesquisa_ordenação {
         vet.exibir();*/
         
         /*System.out.println("\n--------------------------\n");
+<<<<<<< HEAD
         System.out.println("Vetor ordenado por MEGER SORT: \n");
         vet.merge_sort();
         vet.exibir();*/
@@ -88,6 +89,11 @@ public class Pesquisa_ordenação {
         vet.bucket_sort();
         vet.exibir();*/
         
+=======
+        System.out.println("Vetor ordenado por QUICK SORT PIVOT: \n");
+        vet.quick_sort_pivot();
+        vet.exibir();*/
+>>>>>>> 353ac40a879d0e49485e66ae5e593bc3ae051698
         
         /*System.out.println("\n--------------------------\n");
         System.out.println("Vetor ordenado por GNOME SORT: \n");
@@ -145,12 +151,12 @@ public class Pesquisa_ordenação {
         cab.inserirNoInicio(4);
         cab.inserirNoInicio(15);
         cab.inserirNoInicio(12);
-        cab.inserirNoInicio(8);
-        cab.inserirNoInicio(5);
+        //cab.inserirNoInicio(8);
+        //cab.inserirNoInicio(5);
         
-        cab.inserirNoFinal(1);
+        /*cab.inserirNoFinal(1);
         cab.inserirNoFinal(2);
-        cab.inserirNoFinal(3);
+        cab.inserirNoFinal(3);*/
         
         System.out.println("Lista desordenado: \n");
         cab.exibir();
@@ -169,6 +175,22 @@ public class Pesquisa_ordenação {
         System.out.println("Lista ordenada por SELEÇÃO DIRETA: \n");
         cab.selecao_direta();
         cab.exibir();*/
+        
+        /*System.out.println("\n--------------------------\n");
+        System.out.println("Lista ordenada por Bubble Sort: \n");
+        cab.bubble_sort();
+        cab.exibir();*/
+        
+        System.out.println("\n--------------------------\n");
+        System.out.println("Lista ordenada por Shake Sort: \n");
+        cab.shake_sort();
+        cab.exibir();
+        
+        /*System.out.println("\n--------------------------\n");
+        System.out.println("Lista ordenada por Heap Sort: \n");
+        cab.heap_sort();
+        cab.exibir();*/
+        
         
         /*System.out.println("\n--------------------------\n");
         int chave = 2;
