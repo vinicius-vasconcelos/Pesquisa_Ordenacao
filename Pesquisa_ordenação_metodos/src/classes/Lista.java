@@ -4,10 +4,12 @@ public class Lista {
 
     private No inicio;
     private No fim;
+    private int TAM;
 
     public Lista() {
         this.inicio = null;
         this.fim = null;
+        this.TAM = 0;
     }
 
     public void inicializar() {
@@ -23,6 +25,14 @@ public class Lista {
             aux = aux.getProx();
         }
         return cont;
+    }
+
+    public No get(int pos) {
+        No aux = inicio;
+        for (int i = 0; aux != null && i < pos; i++) {
+            aux = aux.getProx();
+        }
+        return aux;
     }
 
     public No getNo(int pos) {
@@ -46,6 +56,8 @@ public class Lista {
             novaCaixa.setProx(inicio);
             inicio = novaCaixa;
         }
+
+        TAM++;
     }
 
     public void inserirNoFinal(int info) {
@@ -58,6 +70,8 @@ public class Lista {
             novaCaixa.setAnt(fim);
             fim = novaCaixa;
         }
+
+        TAM++;
     }
 
     public void remover(int info) {
@@ -236,8 +250,7 @@ public class Lista {
         }
     }
 
-    public void shake_sort() 
-    {
+    public void shake_sort() {
         int aux;
         for (No ini = inicio, f = fim; ini != f.getAnt(); ini = ini.getProx()) {
             for (No i = ini; i != f; i = i.getProx()) {
@@ -247,7 +260,6 @@ public class Lista {
                     i.getProx().setInfo(aux);
                 }
             }
-            //f = f.getAnt();
             for (No j = f; j != ini; j = j.getAnt()) {
                 if (j.getInfo() < j.getAnt().getInfo()) {
                     aux = j.getInfo();
@@ -283,7 +295,7 @@ public class Lista {
 
                 paiNo = getNo(pai);
                 maiorNo = getNo(maiorf);
-                
+
                 if (maiorNo.getInfo() > paiNo.getInfo()) {
                     aux = paiNo.getInfo();
                     paiNo.setInfo(maiorNo.getInfo());
@@ -298,4 +310,121 @@ public class Lista {
             tamanho--;
         }
     }
+
+    public void shell_sort() {
+        int dist = 4;
+        int temp;
+        int i, j, k;
+        No naux1, naux2, naux3, naux4;
+        No aux = inicio;
+        while (dist > 0) {
+            for (i = 0; i < dist; i++) {
+                for (j = i; j + dist < tamanho(); j++) {
+                    naux1 = aux;
+                    naux2 = naux1.getProx();
+
+                    while (naux2 != null) {
+                        if (naux1.getInfo() > naux2.getInfo()) {
+                            temp = naux1.getInfo();
+                            naux1.setInfo(naux2.getInfo());
+                            naux2.setInfo(temp);
+
+                            naux3 = naux2;
+                            naux4 = naux3.getAnt();
+                            while (naux4 != null && naux3 != null)//faz a volta até não achar elementos fora do lugar
+                            {
+                                if (naux3.getInfo() < naux4.getInfo()) {
+                                    temp = naux4.getInfo();
+                                    naux4.setInfo(naux3.getInfo());
+                                    naux3.setInfo(temp);
+                                }
+                                naux3 = naux3.getAnt();
+                                naux4 = naux3.getAnt();
+                            }
+                        }
+
+                        naux1 = naux1.getProx();
+                        naux2 = naux1.getProx();
+                    }
+                }
+            }
+            dist /= 2;
+        }
+    }
+
+    public void quick_sort() {
+        quick_sort_sp(inicio, fim);
+    }
+
+    private void quick_sort_sp(No ini, No fim) {
+        No i = ini, j = fim;
+        int temp;
+        No ni, nj;
+
+        while (i != j) {
+            ni = i;
+            nj = j;
+            while (i != j && ni.getInfo() <= nj.getInfo()) {
+                i.getProx();
+                ni = ni.getProx();
+            }
+
+            temp = nj.getInfo();
+            nj.setInfo(ni.getInfo());
+            ni.setInfo(temp);
+
+            while (i != j && nj.getInfo() >= ni.getInfo()) {
+                j.getAnt();
+                nj = nj.getAnt();
+            }
+
+            temp = nj.getInfo();
+            nj.setInfo(ni.getInfo());
+            ni.setInfo(temp);
+
+        }
+        if (ini != i.getAnt()) {
+            quick_sort_sp(ini, i.getAnt());
+        }
+        if (j.getProx() != fim) {
+            quick_sort_sp(j.getProx(), fim);
+        }
+    }
+
+    public void quick_sort_pivot() {
+        quickP(0, TAM);
+    }
+
+    private void quickP(int ini, int fim) {
+        int pivo = get((ini + fim) / 2).getInfo();
+        int i = ini, j = fim;
+        int temp;
+        No auxi, auxj;
+
+        while (i < j) {
+            auxi = get(i);
+            auxj = get(j);
+            while (auxi.getInfo() < pivo) {
+                i++;
+                auxi = auxi.getProx();
+            }
+            while (auxj.getInfo() > pivo) {
+                j--;
+                auxj = auxj.getAnt();
+            }
+            if (i <= j) {
+                temp = auxi.getInfo();
+                auxi.setInfo(auxj.getInfo());
+                auxj.setInfo(temp);
+            }
+        }
+        
+        if (ini < j) {
+            quickP(ini, j);
+        }
+        if (i < fim) {
+            quickP(i, fim);
+        }
+    }
+
 }

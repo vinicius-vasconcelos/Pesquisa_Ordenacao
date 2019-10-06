@@ -3,10 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/Users/hiroshi/Documents/Pesquisa_Ordenacao/Pesquisa_ordenação_metodos/src/classes/Vetor.java</file>
             <file>file:/Users/hiroshi/Documents/Pesquisa_Ordenacao/Pesquisa_ordenação_metodos/src/pesquisa_ordenação/Pesquisa_ordenação.java</file>
             <file>file:/Users/hiroshi/Documents/Pesquisa_Ordenacao/Pesquisa_ordenação_metodos/src/classes/Balde.java</file>
             <file>file:/Users/hiroshi/Documents/Pesquisa_Ordenacao/Pesquisa_ordenação_metodos/src/classes/Lista.java</file>
+=======
+            <file>file:/C:/Users/Vinicius%20Vasconcelos/Documents/GITHUB/Pesquisa_Ordenacao/Pesquisa_ordenação_metodos/src/classes/Lista.java</file>
+            <file>file:/C:/Users/Vinicius%20Vasconcelos/Documents/GITHUB/Pesquisa_Ordenacao/Pesquisa_ordenação_metodos/src/pesquisa_ordenação/Pesquisa_ordenação.java</file>
+>>>>>>> 53514ae7bdcba7cb2817fa3507026fa80ebb8897
         </group>
     </open-files>
 </project-private>

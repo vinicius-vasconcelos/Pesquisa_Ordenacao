@@ -92,8 +92,10 @@ public class Pesquisa_ordenação {
         vet.bucket_sort();
         vet.exibir();*/
         
-        //System.out.println("Vetor ordenado por QUICK SORT PIVOT: \n");
-        
+        /*System.out.println("Vetor ordenado por QUICK SORT PIVOT: \n");
+        vet.quick_sort_pivot();
+        vet.exibir();*/
+
         /*System.out.println("\n--------------------------\n");
         System.out.println("Vetor ordenado por GNOME SORT: \n");
         vet.gnome_sort();
@@ -186,10 +188,26 @@ public class Pesquisa_ordenação {
         cab.exibir();*/
         
         /*System.out.println("\n--------------------------\n");
-        System.out.println("Lista ordenada por Heap Sort: \n");
+        System.out.println("Lista ordenada por HEAP SORT: \n");
         cab.heap_sort();
         cab.exibir();*/
         
+        /*System.out.println("\n--------------------------\n");
+        System.out.println("Lista ordenada por SHELL SORT: \n");
+        cab.shake_sort();
+        cab.exibir();*/
+        
+        /*System.out.println("\n--------------------------\n");
+        System.out.println("Lista ordenada por QUICK SORT: \n");
+        cab.quick_sort();
+        cab.exibir();*/
+        
+        System.out.println("\n--------------------------\n");
+        System.out.println("Lista ordenada por QUICK SORT PIVOT: \n");
+        cab.quick_sort_pivot();
+        cab.exibir();
+        
+        /* ------------- BUCAS ------------- */
         
         /*System.out.println("\n--------------------------\n");
         int chave = 2;
@@ -216,5 +234,4 @@ public class Pesquisa_ordenação {
         No pos = cab.busca_binaria(chave);
         System.out.println("valor: " + chave + " na pos: " + pos.getInfo());*/
     }
-    
 }
