@@ -89,11 +89,7 @@ public class Pesquisa_ordenação {
         vet.bucket_sort();
         vet.exibir();*/
         
-=======
         System.out.println("Vetor ordenado por QUICK SORT PIVOT: \n");
-        vet.quick_sort_pivot();
-        vet.exibir();*/
->>>>>>> 353ac40a879d0e49485e66ae5e593bc3ae051698
         
         /*System.out.println("\n--------------------------\n");
         System.out.println("Vetor ordenado por GNOME SORT: \n");
