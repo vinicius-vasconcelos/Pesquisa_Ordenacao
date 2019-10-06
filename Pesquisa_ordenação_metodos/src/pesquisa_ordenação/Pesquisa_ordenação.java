@@ -7,7 +7,7 @@ import classes.Vetor;
 public class Pesquisa_ordenação {
 
     public static void main(String[] args) {
-        /*Vetor vet =  new Vetor();
+        Vetor vet =  new Vetor();
         
         vet.inserir(2);
         vet.inserir(100);
@@ -20,17 +20,20 @@ public class Pesquisa_ordenação {
         vet.inserir(15);
         
         System.out.println("Vetor desordenado: \n");
-        vet.exibir();*/
+        vet.exibir();
         
         /*System.out.println("\n--------------------------\n");
         System.out.println("Vetor ordenado por INSERÇÃO DIRETA: \n");
         vet.insercao_direta();
-        vet.exibir();
+        vet.exibir();*/
         
-        System.out.println("\n--------------------------\n");
+        vet.bucket_sort();
+        //vet.exibir();
+        
+        /*System.out.println("\n--------------------------\n");
         System.out.println("Vetor ordenado por INSERÇÃO BINÁRIA: \n");
         vet.insercao_binaria();
-        vet.exibir();*/
+        vet.exibir();
         
         /*System.out.println("\n--------------------------\n");
         System.out.println("Vetor ordenado por SELEÇÃO DIRETA: \n");
@@ -89,7 +92,7 @@ public class Pesquisa_ordenação {
         vet.bucket_sort();
         vet.exibir();*/
         
-        System.out.println("Vetor ordenado por QUICK SORT PIVOT: \n");
+        //System.out.println("Vetor ordenado por QUICK SORT PIVOT: \n");
         
         /*System.out.println("\n--------------------------\n");
         System.out.println("Vetor ordenado por GNOME SORT: \n");
@@ -154,8 +157,8 @@ public class Pesquisa_ordenação {
         cab.inserirNoFinal(2);
         cab.inserirNoFinal(3);*/
         
-        System.out.println("Lista desordenado: \n");
-        cab.exibir();
+        /*System.out.println("Lista desordenado: \n");
+        cab.exibir();*/
         
         /*System.out.println("\n--------------------------\n");
         System.out.println("Lista ordenada por INSERÇÃO DIRETA: \n");
@@ -177,10 +180,10 @@ public class Pesquisa_ordenação {
         cab.bubble_sort();
         cab.exibir();*/
         
-        System.out.println("\n--------------------------\n");
+        /*System.out.println("\n--------------------------\n");
         System.out.println("Lista ordenada por Shake Sort: \n");
         cab.shake_sort();
-        cab.exibir();
+        cab.exibir();*/
         
         /*System.out.println("\n--------------------------\n");
         System.out.println("Lista ordenada por Heap Sort: \n");

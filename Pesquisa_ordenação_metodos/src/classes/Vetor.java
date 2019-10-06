@@ -1,5 +1,6 @@
 package classes;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Vetor {
@@ -25,6 +26,28 @@ public class Vetor {
     public void inserir(int valor) {
         vet[TL] = valor;
         TL++;
+    }
+    
+    public int max()
+    {
+        int max = 0;
+        for(int i = 0; i < TL;i++)
+        {
+            if(vet[i] > max)
+                max = vet[i];
+        }
+        return max;
+    }
+    
+    public int min()
+    {
+        int min = 9999;
+        for(int i = 0; i < TL;i++)
+        {
+            if(vet[i] < min)
+                min = vet[i];
+        }
+        return min;
     }
 
     //-------------- Métodos de Pesquisa
@@ -458,8 +481,33 @@ public class Vetor {
         }
     }
     
-    /*public void bucket_sort() {
-    }*/
+    public void bucket_sort() {
+        int max = max(), min = min(), intervalo = (max - min)/5;
+        int pos, p = 0;
+        int vetor[] = new int[10];
+        
+        Balde baldes[] = new Balde[5];
+        
+        for(int i = 0; i < 5; i++)
+            baldes[i] = new Balde();
+        
+        for(int i = 0; i < TL;i++)
+        {
+            pos = vet[i]/intervalo;
+            if(pos >= 5)
+                pos--;
+            baldes[pos].insere(vet[i]);
+            baldes[pos].insercao_direta();
+        }
+        
+        for(int j = 0; j < baldes.length;j++)
+        {
+            for(int k = 0; k < baldes[j].getTL();k++)
+                vetor[p++] = baldes[j].getVet()[k];
+        }
+        for(int x = 0; x < p; x++)
+            System.out.println(""+vetor[x]);
+    }
 
     public void gnome_sort() {
         int aux, i, j;
