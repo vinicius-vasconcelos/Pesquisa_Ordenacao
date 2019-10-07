@@ -151,6 +151,22 @@ public class MetodosArquivo {
         aux += "\n----------------------------------------------------------------------------------------------------------------------------------------------------------------";
         System.out.println("Quick Sort: PRONTO");
 
+        //QUICK SORT PIVOT
+        System.out.println("\nQuick Sort Pivot: EM EXECUÇÃO");
+        Arquivo quickPivot = new Arquivo("Arquivos/QuickSortPivotMelhor.dat");
+        quickPivot.executaQuickPivot(vetMelhor);
+        aux += "\nQuick Sort Pivot          |  " + quickPivot.getCompProg() + "  |  " + "  -  " + "  |  " + quickPivot.getMovProg() + "  |  " + "  -  " + "  |  " + quickPivot.getTtotal();
+
+        quickPivot = new Arquivo("Arquivos/QuickSortPivotPior.dat");
+        quickPivot.executaQuickPivot(vetPior);
+        aux += " || " + quickPivot.getCompProg() + "  |  " + "  -  " + "  |  " + quickPivot.getMovProg() + "  |  " + "  -  " + "  |  " + quickPivot.getTtotal();
+
+        quickPivot = new Arquivo("Arquivos/QuickSortPivotMedio.dat");
+        quickPivot.executaQuickPivot(vetMed);
+        aux += " || " + quickPivot.getCompProg() + "  |  " + "  -  " + "  |  " + quickPivot.getMovProg() + "  |  " + "  -  " + "  |  " + quickPivot.getTtotal();
+        aux += "\n----------------------------------------------------------------------------------------------------------------------------------------------------------------";
+        System.out.println("Quick Sort Pivot: PRONTO");
+
         //MERGE SORT
         System.out.println("\nMerge Sort: EM EXECUÇÃO");
         Arquivo merge = new Arquivo("Arquivos/MergeSortMelhor.dat");
@@ -167,6 +183,86 @@ public class MetodosArquivo {
         aux += "\n----------------------------------------------------------------------------------------------------------------------------------------------------------------";
         System.out.println("Merge Sort: PRONTO");
 
+        //COUNT SORT
+        System.out.println("\nCount Sort: EM EXECUÇÃO");
+        Arquivo count = new Arquivo("Arquivos/CountSortMelhor.dat");
+        count.executaCount(vetMelhor);
+        aux += "\nCount Sort           |  " + count.getCompProg() + "  |  " + "  -  " + "  |  " + count.getMovProg() + "  |  " + "  -  " + "  |  " + count.getTtotal();
+
+        count = new Arquivo("Arquivos/CountSortPior.dat");
+        count.executaCount(vetPior);
+        aux += " || " + count.getCompProg() + "  |  " + "  -  " + "  |  " + count.getMovProg() + "  |  " + "  -  " + "  |  " + count.getTtotal();
+
+        count = new Arquivo("Arquivos/CountSortMedio.dat");
+        count.executaCount(vetMed);
+        aux += " || " + count.getCompProg() + "  |  " + "  -  " + "  |  " + count.getMovProg() + "  |  " + "  -  " + "  |  " + count.getTtotal();
+        aux += "\n----------------------------------------------------------------------------------------------------------------------------------------------------------------";
+        System.out.println("Count Sort: PRONTO");
+
+        //BUCKET SORT
+        System.out.println("\nBucket Sort: EM EXECUÇÃO");
+        Arquivo bucket = new Arquivo("Arquivos/BucketSortMelhor.dat");
+        bucket.executaBucket(vetMelhor);
+        aux += "\nBucket Sort           |  " + bucket.getCompProg() + "  |  " + "  -  " + "  |  " + bucket.getMovProg() + "  |  " + "  -  " + "  |  " + bucket.getTtotal();
+
+        bucket = new Arquivo("Arquivos/BucketSortPior.dat");
+        bucket.executaBucket(vetPior);
+        aux += " || " + bucket.getCompProg() + "  |  " + "  -  " + "  |  " + bucket.getMovProg() + "  |  " + "  -  " + "  |  " + bucket.getTtotal();
+
+        bucket = new Arquivo("Arquivos/BucketSortMedio.dat");
+        bucket.executaBucket(vetMed);
+        aux += " || " + bucket.getCompProg() + "  |  " + "  -  " + "  |  " + bucket.getMovProg() + "  |  " + "  -  " + "  |  " + bucket.getTtotal();
+        aux += "\n----------------------------------------------------------------------------------------------------------------------------------------------------------------";
+        System.out.println("Bucket Sort: PRONTO");
+
+        //RADIX SORT
+        System.out.println("\nRadix Sort: EM EXECUÇÃO");
+        Arquivo radix = new Arquivo("Arquivos/RadixSortMelhor.dat");
+        radix.executaRadix(vetMelhor);
+        aux += "\nRadix Sort           |  " + radix.getCompProg() + "  |  " + "  -  " + "  |  " + radix.getMovProg() + "  |  " + "  -  " + "  |  " + radix.getTtotal();
+
+        radix = new Arquivo("Arquivos/RadixSortPior.dat");
+        radix.executaRadix(vetPior);
+        aux += " || " + radix.getCompProg() + "  |  " + "  -  " + "  |  " + radix.getMovProg() + "  |  " + "  -  " + "  |  " + radix.getTtotal();
+
+        radix = new Arquivo("Arquivos/RadixSortMedio.dat");
+        radix.executaRadix(vetMed);
+        aux += " || " + radix.getCompProg() + "  |  " + "  -  " + "  |  " + radix.getMovProg() + "  |  " + "  -  " + "  |  " + radix.getTtotal();
+        aux += "\n----------------------------------------------------------------------------------------------------------------------------------------------------------------";
+        System.out.println("Raix Sort: PRONTO");
+
+        //GNOME SORT
+        System.out.println("\nGnome Sort: EM EXECUÇÃO");
+        Arquivo gnome = new Arquivo("Arquivos/GnomeSortMelhor.dat");
+        gnome.executaGnome(vetMelhor);
+        aux += "\nGnome Sort           |  " + gnome.getCompProg() + "  |  " + "  -  " + "  |  " + gnome.getMovProg() + "  |  " + "  -  " + "  |  " + gnome.getTtotal();
+
+        gnome = new Arquivo("Arquivos/GnomeSortPior.dat");
+        gnome.executaGnome(vetPior);
+        aux += " || " + gnome.getCompProg() + "  |  " + "  -  " + "  |  " + gnome.getMovProg() + "  |  " + "  -  " + "  |  " + gnome.getTtotal();
+
+        gnome = new Arquivo("Arquivos/GnomeSortMedio.dat");
+        gnome.executaGnome(vetMed);
+        aux += " || " + gnome.getCompProg() + "  |  " + "  -  " + "  |  " + gnome.getMovProg() + "  |  " + "  -  " + "  |  " + gnome.getTtotal();
+        aux += "\n----------------------------------------------------------------------------------------------------------------------------------------------------------------";
+        System.out.println("Gnome Sort: PRONTO");
+
+        //COMB SORT
+        System.out.println("\nComb Sort: EM EXECUÇÃO");
+        Arquivo comb = new Arquivo("Arquivos/CombSortMelhor.dat");
+        comb.executaComb(vetMelhor);
+        aux += "\nComb Sort           |  " + comb.getCompProg() + "  |  " + "  -  " + "  |  " + comb.getMovProg() + "  |  " + "  -  " + "  |  " + comb.getTtotal();
+
+        comb = new Arquivo("Arquivos/CombSortPior.dat");
+        comb.executaComb(vetPior);
+        aux += " || " + comb.getCompProg() + "  |  " + "  -  " + "  |  " + comb.getMovProg() + "  |  " + "  -  " + "  |  " + comb.getTtotal();
+
+        comb = new Arquivo("Arquivos/CombSortMedio.dat");
+        comb.executaComb(vetMed);
+        aux += " || " + comb.getCompProg() + "  |  " + "  -  " + "  |  " + comb.getMovProg() + "  |  " + "  -  " + "  |  " + comb.getTtotal();
+        aux += "\n----------------------------------------------------------------------------------------------------------------------------------------------------------------";
+        System.out.println("Comb Sort: PRONTO");
+
         try {
             FileWriter arq = new FileWriter("Resultado.txt");
             PrintWriter gravarArq = new PrintWriter(arq);
@@ -180,42 +276,36 @@ public class MetodosArquivo {
 
     public static double[] calculaComp() {
         double[] vet = new double[15];
-        //Insercao Direta
+       
         vet[0] = Math.round(TF - 1);
         vet[1] = Math.round((TF * TF + TF - 2) / 4);
         vet[2] = Math.round((TF * TF + TF - 4) / 4);
-
-        //Insercao Binaria
+  
         vet[3] = vet[4] = vet[5] = Math.round(TF * (Math.log(TF - Math.E)));
 
-        //Selecao Direta //Bubble Sort //Shake Sort
         vet[6] = vet[7] = vet[8] = vet[9] = vet[10] = vet[11] = vet[12] = vet[13] = vet[14] = Math.round((TF * TF - TF) / 2);
         return vet;
     }
 
     public static double[] calculaMov() {
         double[] vet = new double[15];
-        //Insercao Direta
+        
         vet[0] = Math.round(3 * (TF - 1));
         vet[1] = Math.round((TF * TF + 9 * TF - 10) / 4);
         vet[2] = Math.round((TF * TF + 3 * TF - 4) / 2);
 
-        //Insercao Binaria
         vet[3] = Math.round(3 * (TF - 1));
         vet[4] = Math.round((TF * TF + 9 * TF - 10) / 4);
         vet[5] = Math.round((TF * TF + 3 * TF - 4) / 2);
 
-        //Selecao Direta
         vet[6] = Math.round(3 * (TF - 1));
         vet[7] = Math.round(TF * (Math.log(TF) + 0.577216));
         vet[8] = Math.round(TF * TF / 4 + 3 * (TF - 1));
 
-        //Bubble Sort
         vet[9] = 0;
         vet[10] = Math.round(3 * (TF * TF - TF) / 2);
         vet[11] = Math.round(3 * (TF * TF - TF) / 4);
 
-        //Shake Sort
         vet[12] = 0;
         vet[13] = Math.round(3 * (TF * TF - TF) / 2);
         vet[14] = Math.round(3 * (TF * TF - TF) / 4);

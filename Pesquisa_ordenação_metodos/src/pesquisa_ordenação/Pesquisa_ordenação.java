@@ -143,7 +143,7 @@ public class Pesquisa_ordenação {
         
         /* ---------- LISTA ENCADEADA ---------- */
         
-       /* Lista cab = new Lista();
+       Lista cab = new Lista();
         
         cab.inserirNoInicio(2);
         cab.inserirNoInicio(10);
@@ -152,15 +152,42 @@ public class Pesquisa_ordenação {
         cab.inserirNoInicio(4);
         cab.inserirNoInicio(15);
         cab.inserirNoInicio(12);
-        cab.inserirNoInicio(8);*/
-        //cab.inserirNoInicio(5);
+        cab.inserirNoInicio(8);
+        
+        /*cab.inserirNoInicio(20);
+        cab.inserirNoInicio(100);
+        cab.inserirNoInicio(500);
+        cab.inserirNoInicio(10);
+        cab.inserirNoInicio(40);
+        cab.inserirNoInicio(150);
+        cab.inserirNoInicio(120);
+        cab.inserirNoInicio(80);
+        
+        cab.inserirNoInicio(200);
+        cab.inserirNoInicio(1000);
+        cab.inserirNoInicio(5000);
+        cab.inserirNoInicio(100);
+        cab.inserirNoInicio(400);
+        cab.inserirNoInicio(1500);
+        cab.inserirNoInicio(1200);
+        cab.inserirNoInicio(800);
+        
+        cab.inserirNoInicio(12);
+        cab.inserirNoInicio(110);
+        cab.inserirNoInicio(150);
+        cab.inserirNoInicio(11);
+        cab.inserirNoInicio(14);
+        cab.inserirNoInicio(115);
+        cab.inserirNoInicio(112);
+        cab.inserirNoInicio(18);
+        cab.inserirNoInicio(5);*/
         
         /*cab.inserirNoFinal(1);
         cab.inserirNoFinal(2);
         cab.inserirNoFinal(3);*/
         
-        /*System.out.println("Lista desordenado: \n");
-        cab.exibir();*/
+        System.out.println("Lista desordenado: \n");
+        cab.exibir();
         
         /*System.out.println("\n--------------------------\n");
         System.out.println("Lista ordenada por INSERÇÃO DIRETA: \n");
@@ -242,10 +269,10 @@ public class Pesquisa_ordenação {
         cab.gnome_sort();
         cab.exibir();*/
         
-        /*System.out.println("\n--------------------------\n");
+        System.out.println("\n--------------------------\n");
         System.out.println("Lista ordenada por TIM SORT : \n");
         cab.tim_sort();
-        cab.exibir();*/
+        cab.exibir();
         
         
         /* ------------- BUCAS ------------- */
