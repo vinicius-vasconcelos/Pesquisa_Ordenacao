@@ -27,25 +27,23 @@ public class Vetor {
         vet[TL] = valor;
         TL++;
     }
-    
-    public int max()
-    {
+
+    public int max() {
         int max = 0;
-        for(int i = 0; i < TL;i++)
-        {
-            if(vet[i] > max)
+        for (int i = 0; i < TL; i++) {
+            if (vet[i] > max) {
                 max = vet[i];
+            }
         }
         return max;
     }
-    
-    public int min()
-    {
+
+    public int min() {
         int min = 9999;
-        for(int i = 0; i < TL;i++)
-        {
-            if(vet[i] < min)
+        for (int i = 0; i < TL; i++) {
+            if (vet[i] < min) {
                 min = vet[i];
+            }
         }
         return min;
     }
@@ -480,33 +478,35 @@ public class Vetor {
             vet[i] = output[i];
         }
     }
-    
+
     public void bucket_sort() {
-        int max = max(), min = min(), intervalo = (max - min)/5;
+        int max = max(), min = min(), intervalo = (max - min) / 5;
         int pos, p = 0;
         int vetor[] = new int[10];
-        
+
         Balde baldes[] = new Balde[5];
-        
-        for(int i = 0; i < 5; i++)
+
+        for (int i = 0; i < 5; i++) {
             baldes[i] = new Balde();
-        
-        for(int i = 0; i < TL;i++)
-        {
-            pos = vet[i]/intervalo;
-            if(pos >= 5)
+        }
+
+        for (int i = 0; i < TL; i++) {
+            pos = vet[i] / intervalo;
+            if (pos >= 5) {
                 pos--;
+            }
             baldes[pos].insere(vet[i]);
             baldes[pos].insercao_direta();
         }
-        
-        for(int j = 0; j < baldes.length;j++)
-        {
-            for(int k = 0; k < baldes[j].getTL();k++)
+
+        for (int j = 0; j < baldes.length; j++) {
+            for (int k = 0; k < baldes[j].getTL(); k++) {
                 vetor[p++] = baldes[j].getVet()[k];
+            }
         }
-        for(int x = 0; x < p; x++)
+        for (int x = 0; x < p; x++) {
             vet[x] = vetor[x];
+        }
     }
 
     public void gnome_sort() {
@@ -584,6 +584,78 @@ public class Vetor {
             for (int i = 0; i < vetCount.length; i++) {
                 vetCount[i] = 0;
             }
+        }
+    }
+
+    public void tim_sort() {
+        int tim_tam = 32;
+        int[] aux = new int[TL];
+
+        for (int i = 0; i < TL; i += tim_tam) {
+            insercao_direta_tim(vet, i, i + tim_tam);
+        }
+
+        while (tim_tam < TL) {
+            if (2 * tim_tam > TL) {
+                tim_tam = TL;
+            } else {
+                tim_tam += tim_tam;
+            }
+
+            for (int i = 0; i < TL; i += tim_tam) {
+                if (tim_tam + i < TL) {
+                    merge_tim(aux, i, i + tim_tam - 1);
+                } else {
+                    merge_tim(aux, i, TL - 1);
+                }
+            }
+        }
+    }
+
+    private void insercao_direta_tim(int[] vet, int esq, int dir) {
+
+        int aux, pos;
+
+        for (int i = esq; i < dir; i++) {
+            aux = vet[i];
+            pos = i;
+
+            while (pos > esq && aux < vet[pos - 1]) {
+                vet[pos] = vet[pos - 1];
+                pos--;
+            }
+            vet[pos] = aux;
+
+        }
+    }
+
+    public void merge_tim(int[] aux, int esq, int dir) {
+        int meio;
+        if (esq < dir) {
+            meio = (esq + dir) / 2;
+            merge_tim(aux, esq, meio);
+            merge_tim(aux, meio + 1, dir);
+            fusao_tim(aux, esq, meio, meio + 1, dir);
+        }
+    }
+
+    private void fusao_tim(int[] aux, int ini1, int fim1, int ini2, int fim2) {
+
+        int k = 0, i = ini1, j = ini2;
+        while (i <= fim1 && j <= fim2) {
+            aux[k++] = (vet[i] < vet[j]) ? vet[i++] : vet[j++];
+        }
+
+        while (i <= fim1) {
+            aux[k++] = vet[i++];
+        }
+
+        while (j <= fim2) {
+            aux[k++] = vet[j++];
+        }
+
+        for (int l = 0; l < k; l++) {
+            vet[l + ini1] = aux[l];
         }
     }
 }
